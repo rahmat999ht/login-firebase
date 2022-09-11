@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:login_firebase/app/controllers/auth_controller.dart';
-import 'package:login_firebase/app/modules/authentication/login/views/login_view.dart';
-import 'package:login_firebase/app/modules/dasboard/home/views/home_view.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/utils/loading_view.dart';
@@ -22,7 +20,9 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  AuthController auth = Get.put(AuthController(), permanent: true);
+  final AuthController auth = Get.put(AuthController(), permanent: true);
+
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: "Belajar Firebase Login",
             initialRoute: snapshot.data != null ? Routes.HOME : Routes.LOGIN,
-            // home: snapshot.data != null ? const HomeView() : const LoginView(),
             getPages: AppPages.routes,
           );
         }

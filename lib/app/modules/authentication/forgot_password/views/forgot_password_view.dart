@@ -26,33 +26,36 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      TextFieldCustom(
-                        label: 'Email',
-                        hint: 'Your email',
-                        controller: controller.email,
-                      ),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      ButtonPrimaryCustom(
-                        text: 'Submit',
-                        onPressed: () {
-                          Get.back(); //submit ke login
-                        },
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      TextButtonCustom(
-                        text: 'Back to login',
-                        onPressed: () {
-                          Get.back();
-                        },
-                      ),
-                    ],
+                  child: Form(
+                    key: controller.formkey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        TextFieldCustom(
+                          label: 'Email',
+                          hint: 'Your email',
+                          controller: controller.emailCF,
+                          keyboardType: TextInputType.emailAddress,
+                          validator: controller.validEmail,
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        ButtonPrimaryCustom(
+                          text: 'Submit',
+                          onPressed: controller.btnSubmit,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextButtonCustom(
+                          text: 'Back to login',
+                          onPressed: () {
+                            Get.back();
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(

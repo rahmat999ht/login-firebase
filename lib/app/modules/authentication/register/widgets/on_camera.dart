@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:login_firebase/app/modules/authentication/register/controllers/register_controller.dart';
 
-class OnCamera extends StatelessWidget {
+class OnCamera extends GetView<RegisterController> {
   final void Function() onCamera;
   const OnCamera({
     Key? key,
