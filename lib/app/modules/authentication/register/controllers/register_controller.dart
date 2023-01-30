@@ -25,13 +25,13 @@ class RegisterController extends GetxController {
   }
 
   void btnRegis() {
+    // if (formkey.currentState!.validate()) {
     auth.singup(emailCR.text, passwordCR.text);
-    if (formkey.currentState!.validate()) {
-      log("successful");
-      return;
-    } else {
-      log("UnSuccessfull");
-    }
+    //   log("successful");
+    //   return;
+    // } else {
+    //   log("UnSuccessfull");
+    // }
   }
 
   String? validEmpty(String? value) {
@@ -44,8 +44,8 @@ class RegisterController extends GetxController {
   String? validEmail(String? value) {
     if (value!.isEmpty) {
       return 'Please a Enter';
-    }
-    if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+    } else if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+        .hasMatch(value)) {
       return 'Please a valid Email';
     }
     return null;
@@ -54,8 +54,7 @@ class RegisterController extends GetxController {
   String? validPass(String? value) {
     if (value != null) {
       return 'Please a enter password';
-    }
-    if (value!.length > 5) {
+    } else if (value!.length > 5) {
       return 'Pass min 6 characters';
     }
     log(passwordCR.text);
@@ -65,8 +64,7 @@ class RegisterController extends GetxController {
   String? validComPass(String? value) {
     if (value != null) {
       return 'Please re-enter password';
-    }
-    if (value!.length > 5) {
+    } else if (value!.length > 5) {
       return 'Pass min 6 characters';
     }
     log(passwordCR.text);

@@ -47,8 +47,10 @@ class LoginController extends GetxController {
   }
 
   String? validPass(String? value) {
-    if (value != null && value.length > 5) {
+    if (value != null) {
       return 'Please re-enter password';
+    } else if (value!.length > 3) {
+      return 'Please password min 6 character';
     }
     log(passwordCL.text);
     return null;

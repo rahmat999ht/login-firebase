@@ -37,7 +37,7 @@ class LoginView extends GetView<LoginController> {
                           hint: 'Your email',
                           controller: controller.emailCL,
                           keyboardType: TextInputType.emailAddress,
-                          validator: controller.validEmail,
+                          // validator: controller.validEmail,
                         ),
                         const SizedBox(
                           height: 15,
@@ -59,7 +59,7 @@ class LoginView extends GetView<LoginController> {
                                 color: Colors.black54,
                               ),
                             ),
-                            validator: controller.validPass,
+                            // validator: controller.validPass,
                           ),
                         ),
                         TextButtonCustom(

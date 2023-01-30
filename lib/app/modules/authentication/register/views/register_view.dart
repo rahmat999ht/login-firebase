@@ -62,7 +62,7 @@ class RegisterView extends GetView<RegisterController> {
                           hint: 'Your email',
                           controller: controller.emailCR,
                           keyboardType: TextInputType.emailAddress,
-                          validator: controller.validEmail,
+                          // validator: controller.validEmail,
                         ),
                         const SizedBox(
                           height: 15,
@@ -94,7 +94,7 @@ class RegisterView extends GetView<RegisterController> {
                                 color: Colors.black54,
                               ),
                             ),
-                            validator: controller.validPass,
+                            // validator: controller.validPass,
                           ),
                         ),
                         const SizedBox(
@@ -117,7 +117,7 @@ class RegisterView extends GetView<RegisterController> {
                                 color: Colors.black54,
                               ),
                             ),
-                            validator: controller.validComPass,
+                            // validator: controller.validComPass,
                           ),
                         ),
                         const SizedBox(

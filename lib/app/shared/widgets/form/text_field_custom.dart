@@ -4,7 +4,7 @@ class TextFieldCustom extends StatelessWidget {
   final String label;
   final String hint;
   final TextInputType? keyboardType;
-  final String? Function(String?) validator;
+  final String? Function(String?)? validator;
   final TextEditingController controller;
   final GestureDetector? icon;
   final bool obscureText;
@@ -13,7 +13,7 @@ class TextFieldCustom extends StatelessWidget {
     required this.label,
     required this.hint,
     this.keyboardType,
-    required this.validator,
+    this.validator,
     required this.controller,
     this.icon,
     this.obscureText = false,
