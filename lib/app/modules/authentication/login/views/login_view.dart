@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../routes/app_pages.dart';
 import '../../../../shared/widgets/button/button_primary_custom.dart';
-import '../../../../shared/widgets/button/text_button_custom.dart';
 import '../../../../shared/widgets/form/text_field_custom.dart';
 import '../../../../shared/widgets/stack/stack.dart';
 import '../../../../shared/widgets/title/title.dart';
@@ -37,7 +37,7 @@ class LoginView extends GetView<LoginController> {
                           hint: 'Your email',
                           controller: controller.emailCL,
                           keyboardType: TextInputType.emailAddress,
-                          // validator: controller.validEmail,
+                          validator: controller.validEmail,
                         ),
                         const SizedBox(
                           height: 15,
@@ -59,15 +59,15 @@ class LoginView extends GetView<LoginController> {
                                 color: Colors.black54,
                               ),
                             ),
-                            // validator: controller.validPass,
+                            validator: controller.validPass,
                           ),
                         ),
-                        TextButtonCustom(
-                          text: 'Forgot password?',
-                          onPressed: () {
-                            Get.toNamed(Routes.FORGOT_PASSWORD);
-                          },
-                        ),
+                        // TextButtonCustom(
+                        //   text: 'Forgot password?',
+                        //   onPressed: () {
+                        //     Get.toNamed(Routes.FORGOT_PASSWORD);
+                        //   },
+                        // ),
                         const SizedBox(
                           height: 10,
                         ),

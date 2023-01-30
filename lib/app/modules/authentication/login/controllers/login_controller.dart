@@ -38,7 +38,7 @@ class LoginController extends GetxController {
 
   String? validEmail(String? value) {
     if (value!.isEmpty) {
-      return 'Please a Enter';
+      return 'cannot be blank email';
     }
     if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
       return 'Please a valid Email';
@@ -48,7 +48,7 @@ class LoginController extends GetxController {
 
   String? validPass(String? value) {
     if (value != null) {
-      return 'Please re-enter password';
+      return 'cannot be blank password';
     } else if (value!.length > 3) {
       return 'Please password min 6 character';
     }

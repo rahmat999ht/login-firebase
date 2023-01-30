@@ -28,8 +28,25 @@ class AuthController extends GetxController {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         log('no user found for that email');
+        Get.defaultDialog(
+          title: 'Info',
+          middleText: 'Akun email anda belum terdaftar',
+          onConfirm: () {
+            Get.back(); // close dialog
+          },
+          textConfirm: 'Ya',
+        );
       } else if (e.code == 'wrong-password') {
         log('Wrong password provided for that user');
+        Get.defaultDialog(
+          title: 'Info',
+          middleText:
+              'Akun email anda sudah terdaftar, namun password yang ada masukkan salah',
+          onConfirm: () {
+            Get.back(); // close dialog
+          },
+          textConfirm: 'Ya',
+        );
       }
     }
   }
@@ -42,14 +59,14 @@ class AuthController extends GetxController {
       );
       await myUser.user!.sendEmailVerification();
       Get.defaultDialog(
-        title: 'Verify email',
+        title: 'Info',
         middleText:
-            'Kami telah mengirimkan verifikasi ke $email, \n harap verifikasi untuk melanjutkan',
+            'Akun anda berhasil di daftarkan, silahkan melakukan login !!!',
         onConfirm: () {
           Get.back(); // close dialog
           Get.back(); // back to login
         },
-        textConfirm: 'Ya saya akan mengeceknya',
+        textConfirm: 'Ya',
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {

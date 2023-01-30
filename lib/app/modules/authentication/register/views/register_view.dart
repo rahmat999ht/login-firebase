@@ -1,15 +1,12 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:login_firebase/app/shared/widgets/stack/stack.dart';
+
 import '../../../../shared/widgets/button/button_primary_custom.dart';
 import '../../../../shared/widgets/form/text_field_custom.dart';
 import '../../../../shared/widgets/title/title.dart';
 import '../controllers/register_controller.dart';
 import '../widgets/back_to_login.dart';
-import '../widgets/on_camera.dart';
 
 class RegisterView extends GetView<RegisterController> {
   const RegisterView({Key? key}) : super(key: key);
@@ -41,9 +38,9 @@ class RegisterView extends GetView<RegisterController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        OnCamera(
-                          onCamera: () {},
-                        ),
+                        // OnCamera(
+                        //   onCamera: () {},
+                        // ),
                         const SizedBox(
                           height: 20,
                         ),
@@ -62,7 +59,7 @@ class RegisterView extends GetView<RegisterController> {
                           hint: 'Your email',
                           controller: controller.emailCR,
                           keyboardType: TextInputType.emailAddress,
-                          // validator: controller.validEmail,
+                          validator: controller.validEmail,
                         ),
                         const SizedBox(
                           height: 15,
@@ -94,7 +91,7 @@ class RegisterView extends GetView<RegisterController> {
                                 color: Colors.black54,
                               ),
                             ),
-                            // validator: controller.validPass,
+                            validator: controller.validPass,
                           ),
                         ),
                         const SizedBox(
@@ -117,7 +114,7 @@ class RegisterView extends GetView<RegisterController> {
                                 color: Colors.black54,
                               ),
                             ),
-                            // validator: controller.validComPass,
+                            validator: controller.validComPass,
                           ),
                         ),
                         const SizedBox(
